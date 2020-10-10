@@ -15,20 +15,20 @@ the op uses [![opspec 0.1.6](https://img.shields.io/badge/opspec-0.1.6-brightgre
 ## Install
 
 ```shell
-opctl op install github.com/opspec-pkgs/postgresql.db.run#1.0.2
+opctl op install github.com/opspec-pkgs/postgresql.db.run#1.0.3
 ```
 
 ## Run
 
 ```
-opctl run github.com/opspec-pkgs/postgresql.db.run#1.0.2
+opctl run github.com/opspec-pkgs/postgresql.db.run#1.0.3
 ```
 
 ## Compose
 
 ```yaml
 op:
-  ref: github.com/opspec-pkgs/postgresql.db.run#1.0.2
+  ref: github.com/opspec-pkgs/postgresql.db.run#1.0.3
   inputs:
     # required
     dbDataRootDir:

@@ -1,26 +1,26 @@
 description: Runs a PostgeSQL database.
 name: github.com/opspec-pkgs/postgresql.db.run
 opspec: 0.1.6
-version: 1.0.2
+version: 1.0.3
 inputs:
   dbDataRootDir:
     dir:
-      description: directory to put the database data folder.
+      description: Directory location for database data.
   dbHostname:
     string:
-      description: name for the PostgreSQL container.
+      description: Name for the PostgreSQL container.
       default: postgresql-db
   dbSchema:
     string:
-      description: name of the database to be created.
+      description: Name of the database to be created.
       constraints: { minLength: 1 }
   dbUsername:
     string:
-      description: username to connect to the database.
+      description: Username to connect to the database.
       constraints: { minLength: 1 }
   dbPassword:
     string:
-      description: password to connect to the database.
+      description: Password to connect to the database.
       isSecret: true
       constraints: { minLength: 1 }
 run:
@@ -40,17 +40,11 @@ run:
               echo ERROR: dbUsername can\'t be root!
               exit 1
             fi
-            if [ ! -d ./data ]; then
-                mkdir ./data
-            fi
-            if [ ! -d ./data/postgresql-data ]; then
-                mkdir ./data/postgresql-data
-            fi
             exit 0
     - container:
         image: { ref: 'postgres:13.0-alpine' }
         name: $(dbHostname)
-        dirs: { '/var/lib/postgresql/data': $(dbDataRootDir/data/postgresql-data) }
+        dirs: { '/var/lib/postgresql/data': $(dbDataRootDir) }
         envVars:
           POSTGRES_USER: $(dbUsername)
           POSTGRES_PASSWORD: $(dbPassword)

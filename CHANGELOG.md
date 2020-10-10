@@ -3,7 +3,13 @@
 All notable changes will be documented in this file in accordance with
 [![keepachangelog 1.0.0](https://img.shields.io/badge/keepachangelog-1.0.0-brightgreen.svg)](http://keepachangelog.com/en/1.0.0/)
 
-## \[1.0.1] - 2020-10-09
+## \[1.0.3] - 2020-10-10
+
+### Fixed
+
+- Making the dbDataRootDir folder be the place where the databse data resides.
+
+## \[1.0.2] - 2020-10-09
 
 ### Added
 

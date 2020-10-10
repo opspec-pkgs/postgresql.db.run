@@ -1,7 +1,7 @@
 description: Runs a PostgeSQL database.
 name: github.com/opspec-pkgs/postgresql.db.run
 opspec: 0.1.6
-version: 1.0.0
+version: 1.0.1
 inputs:
   dbDataRootDir:
     dir:

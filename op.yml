@@ -1,11 +1,15 @@
 description: Runs a PostgeSQL database.
 name: github.com/opspec-pkgs/postgresql.db.run
 opspec: 0.1.6
-version: 1.0.1
+version: 1.0.2
 inputs:
   dbDataRootDir:
     dir:
       description: directory to put the database data folder.
+  dbHostname:
+    string:
+      description: name for the PostgreSQL container.
+      default: postgresql-db
   dbSchema:
     string:
       description: name of the database to be created.
@@ -45,7 +49,7 @@ run:
             exit 0
     - container:
         image: { ref: 'postgres:13.0-alpine' }
-        name: postgresql-db
+        name: $(dbHostname)
         dirs: { '/var/lib/postgresql/data': $(dbDataRootDir/data/postgresql-data) }
         envVars:
           POSTGRES_USER: $(dbUsername)

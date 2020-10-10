@@ -5,6 +5,12 @@ All notable changes will be documented in this file in accordance with
 
 ## \[1.0.1] - 2020-10-09
 
+### Added
+
+- Suport for dynamic host name
+
+## \[1.0.1] - 2020-10-09
+
 ### Fixed
 
 - Added PostgreSQL image to readme
